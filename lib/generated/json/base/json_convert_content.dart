@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart' show debugPrint;
 import 'package:bujuan_music_api/api/album/entity/album_info_entity.dart';
 import 'package:bujuan_music_api/api/album/entity/new_album_entity.dart';
+import 'package:bujuan_music_api/api/cloud/entity/cloud_entity.dart';
 import 'package:bujuan_music_api/api/mv/entity/mv_url_entity.dart';
 import 'package:bujuan_music_api/api/playlist/entity/catalogue_entity.dart';
 import 'package:bujuan_music_api/api/playlist/entity/create_playlist_entity.dart';
@@ -244,6 +245,42 @@ class JsonConvert {
     if (<NewAlbumAlbumsArtist>[] is M) {
       return data.map<NewAlbumAlbumsArtist>((Map<String, dynamic> e) =>
           NewAlbumAlbumsArtist.fromJson(e)).toList() as M;
+    }
+    if (<CloudEntity>[] is M) {
+      return data.map<CloudEntity>((Map<String, dynamic> e) => CloudEntity.fromJson(e))
+          .toList() as M;
+    }
+    if (<CloudData>[] is M) {
+      return data.map<CloudData>((Map<String, dynamic> e) => CloudData.fromJson(e))
+          .toList() as M;
+    }
+    if (<CloudDataSong>[] is M) {
+      return data.map<CloudDataSong>((Map<String, dynamic> e) => CloudDataSong.fromJson(e))
+          .toList() as M;
+    }
+    if (<CloudDataSongAr>[] is M) {
+      return data.map<CloudDataSongAr>((Map<String, dynamic> e) => CloudDataSongAr.fromJson(e))
+          .toList() as M;
+    }
+    if (<CloudDataSongAl>[] is M) {
+      return data.map<CloudDataSongAl>((Map<String, dynamic> e) => CloudDataSongAl.fromJson(e))
+          .toList() as M;
+    }
+    if (<CloudDataSongH>[] is M) {
+      return data.map<CloudDataSongH>((Map<String, dynamic> e) => CloudDataSongH.fromJson(e))
+          .toList() as M;
+    }
+    if (<CloudDataSongM>[] is M) {
+      return data.map<CloudDataSongM>((Map<String, dynamic> e) => CloudDataSongM.fromJson(e))
+          .toList() as M;
+    }
+    if (<CloudDataSongL>[] is M) {
+      return data.map<CloudDataSongL>((Map<String, dynamic> e) => CloudDataSongL.fromJson(e))
+          .toList() as M;
+    }
+    if (<CloudDataSongSq>[] is M) {
+      return data.map<CloudDataSongSq>((Map<String, dynamic> e) => CloudDataSongSq.fromJson(e))
+          .toList() as M;
     }
     if (<MvUrlEntity>[] is M) {
       return data.map<MvUrlEntity>((Map<String, dynamic> e) => MvUrlEntity.fromJson(e))
@@ -689,6 +726,15 @@ class JsonConvertClassCollection {
     (NewAlbumAlbums).toString(): NewAlbumAlbums.fromJson,
     (NewAlbumAlbumsArtists).toString(): NewAlbumAlbumsArtists.fromJson,
     (NewAlbumAlbumsArtist).toString(): NewAlbumAlbumsArtist.fromJson,
+    (CloudEntity).toString(): CloudEntity.fromJson,
+    (CloudData).toString(): CloudData.fromJson,
+    (CloudDataSong).toString(): CloudDataSong.fromJson,
+    (CloudDataSongAr).toString(): CloudDataSongAr.fromJson,
+    (CloudDataSongAl).toString(): CloudDataSongAl.fromJson,
+    (CloudDataSongH).toString(): CloudDataSongH.fromJson,
+    (CloudDataSongM).toString(): CloudDataSongM.fromJson,
+    (CloudDataSongL).toString(): CloudDataSongL.fromJson,
+    (CloudDataSongSq).toString(): CloudDataSongSq.fromJson,
     (MvUrlEntity).toString(): MvUrlEntity.fromJson,
     (MvUrlData).toString(): MvUrlData.fromJson,
     (CatalogueEntity).toString(): CatalogueEntity.fromJson,

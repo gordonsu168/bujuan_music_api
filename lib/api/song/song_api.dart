@@ -7,6 +7,7 @@ import 'package:bujuan_music_api/api/song/entity/song_quality_detail_entity.dart
 import 'package:bujuan_music_api/api/song/entity/song_like_check_entity.dart';
 import 'package:bujuan_music_api/api/song/entity/song_url_entity.dart';
 import 'package:bujuan_music_api/bujuan_music_api.dart';
+import 'package:bujuan_music_api/common/music_interceptors.dart';
 
 mixin SongApi {
   /// 新歌速递
@@ -27,14 +28,17 @@ mixin SongApi {
   /// [level] standard, exhigh, lossless, hires, jyeffect(高清环绕声), sky(沉浸环绕声), jymaster(超清母带) 进行音质判断
   /// [encodeType] 编码类型 默认 flac
   Future<SongUrlEntity?> songUrl(
-      {required List<String> ids, String level = 'jyeffect', String encodeType = 'flac'}) async {
+      {required List<String> ids, String level = 'standard', String encodeType = 'flac'}) async {
     final data = {
       'ids': ids,
       'level': level,
       'encodeType': encodeType,
       'immerseType': level == 'sky' ? 'c51' : null
     };
-    return await BujuanMusicManager().post<SongUrlEntity>(url: Api.songUrl, data: data);
+    return await BujuanMusicManager().post<SongUrlEntity>(
+        url: Api.songUrl,
+        data: data,
+        options: createOption(encryptType: EncryptType.linuxForward));
   }
 
   /// 歌曲详情

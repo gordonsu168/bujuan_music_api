@@ -167,7 +167,7 @@ class MusicApiInterceptors extends InterceptorsWrapper {
     });
     header['osver'] = cookiesMap['osver'];
     header['deviceId'] = cookiesMap['deviceId'];
-    header['appver'] = cookiesMap['appver'] ?? '8.0.00';
+    header['appver'] = cookiesMap['appver'] ?? '8.10.05';
     header['versioncode'] = cookiesMap['versioncode'] ?? '140';
     header['mobilename'] = cookiesMap['mobilename'];
     header['buildver'] = cookiesMap['mobilename'] ?? DateTime.now().millisecondsSinceEpoch ~/ 1000;

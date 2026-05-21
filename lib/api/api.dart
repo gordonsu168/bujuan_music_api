@@ -97,4 +97,8 @@ class Api {
   //Mv播放地址
   static const String mvUrl = '/weapi/song/enhance/play/mv/url';
 
+  /// cloud
+  //云盘
+  static const String userCloud = '/api/v1/cloud/get';
+
 }
